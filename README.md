@@ -4,7 +4,7 @@ On this repository I am gonna upload the projects I have worked on.
 
 ## Projects:
 
-### [EDA_Entrega](https://github.com/CanaryBrianArmas/Personnal-projects/tree/main/EDA_Entrega)
+### [EDA_Entrega](https://github.com/CanaryBrianArmas/Personal_Projects/tree/main/EDA_Entrega)
 
 In this project I made an EDA (Exploratory Data Analysis) to get valuable and interesting insights from the [Harry Potter CSV](https://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset)
 
