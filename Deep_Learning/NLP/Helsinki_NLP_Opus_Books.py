@@ -1,12 +1,8 @@
 from datasets import load_dataset
 from transformers import MarianMTModel, MarianTokenizer
 
-dataset = load_dataset("opus_books", "es-fr")  # Ejemplo para inglés-español
-print(dataset)
-
-
 # Cargar dataset
-dataset = load_dataset("opus_books", "en-es")  # Cambia "en-es" por el par de idiomas que elijas
+dataset = load_dataset("Helsinki-NLP/opus_books", "en-es")  # Cambia "en-es" por el par de idiomas que elijas
 print(dataset["train"][0])  # Ver una muestra del dataset
 
 # Cargar modelo y tokenizador preentrenados
