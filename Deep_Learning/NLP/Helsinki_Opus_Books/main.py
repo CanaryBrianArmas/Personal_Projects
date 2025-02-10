@@ -1,32 +1,29 @@
-from datasets import load_dataset
+# main.py
+
+import sys
 from dotenv import load_dotenv
-from transformers import MarianMTModel, MarianTokenizer
-import os
-import warnings
 
-# Upload environment variables
-# load_dotenv()
+# Load environment variables from .env file.
+load_dotenv()
 
-# Getting the token
-# token = os.getenv("HUGGINGFACE_TOKEN")
+def print_usage():
+    print("Usage: python main.py [train|eval|test]")
 
-# Upload dataset wiht the token
-# load_dataset("Helsinki-NLP/opus_books", "en-es", use_auth_token=token)
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print_usage()
+        sys.exit(1)
 
-# Cargar dataset
-dataset = load_dataset("Helsinki-NLP/opus_books", "en-es")  
-print(dataset["train"][0])  # Ver una muestra del dataset
-
-# # Cargar modelo y tokenizador preentrenados
-# model_name = "Helsinki-NLP/opus-mt-en-es"  # Modelo para inglés-español
-# tokenizer = MarianTokenizer.from_pretrained(model_name)
-# model = MarianMTModel.from_pretrained(model_name)
-
-# # Traducir una frase de ejemplo
-# input_text = "Hello, how are you?"
-# inputs = tokenizer(input_text, return_tensors="pt")
-# translated = model.generate(**inputs)
-# output_text = tokenizer.decode(translated[0], skip_special_tokens=True)
-
-# print(f"Input: {input_text}")
-# print(f"Translated: {output_text}")
+    command = sys.argv[1].lower()
+    if command == "train":
+        from src.train import main as train_main
+        train_main()
+    elif command == "eval":
+        from src.eval import main as eval_main
+        eval_main()
+    elif command == "test":
+        from src.test import main as test_main
+        test_main()
+    else:
+        print("Invalid command. Options are: train, eval, test")
+        print_usage()

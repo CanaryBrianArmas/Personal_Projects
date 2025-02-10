@@ -1,3 +1,6 @@
 transformers
 datasets
 python-dotenv
+torch
+sacrebleu
+evaluate
