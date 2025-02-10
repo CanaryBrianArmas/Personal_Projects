@@ -1,4 +1,3 @@
 transformers
 datasets
-os
-pytho-dotenv
+python-dotenv
