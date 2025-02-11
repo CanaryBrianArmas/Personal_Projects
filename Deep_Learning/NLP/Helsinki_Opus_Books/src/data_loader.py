@@ -7,12 +7,12 @@ def load_and_prepare_dataset(tokenizer, max_source_length=128, max_target_length
     """
     Loads the Helsinki-NLP/opus_books dataset for the specified language pair and preprocesses it.
     """
-    # Load the dataset with the given configuration (e.g., "en-fr")
+    # Load the dataset with the given configuration (e.g., "en-es")
     raw_datasets = load_dataset(config.DATASET_NAME, config.DATASET_CONFIG)
 
     # Preprocessing function: tokenize source (English) and target (French) texts.
     def preprocess_function(examples):
-        # Each example contains a "translation" field with keys "en" and "fr"
+        # Each example contains a "translation" field with keys "en" and "es"
         inputs = [ex[config.SOURCE_LANG] for ex in examples["translation"]]
         targets = [ex[config.TARGET_LANG] for ex in examples["translation"]]
         model_inputs = tokenizer(inputs, max_length=max_source_length, truncation=True)

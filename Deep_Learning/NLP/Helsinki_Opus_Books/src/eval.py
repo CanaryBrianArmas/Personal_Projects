@@ -1,8 +1,9 @@
 # src/eval.py
 
-from transformers import Trainer, TrainingArguments, DataCollatorForSeq2Seq
-from model import load_model_and_tokenizer
-from data_loader import load_and_prepare_dataset
+from transformers import TrainingArguments, DataCollatorForSeq2Seq
+from src.custom_trainer import CustomSeq2SeqTrainer
+from src.model import load_model_and_tokenizer
+from src.data_loader import load_and_prepare_dataset
 from src import config
 
 def main():
@@ -22,8 +23,7 @@ def main():
     # Define minimal training arguments for evaluation.
     training_args = TrainingArguments(
         output_dir=config.TRAINING_ARGS["output_dir"],
-        per_device_eval_batch_size=config.TRAINING_ARGS["per_device_eval_batch_size"],
-        predict_with_generate=True,
+        per_device_eval_batch_size=config.TRAINING_ARGS["per_device_eval_batch_size"]
     )
 
     # Compute metrics similar to train.py.
@@ -46,13 +46,13 @@ def main():
         return {"bleu": result["score"]}
 
     # Set up the Trainer.
-    trainer = Trainer(
+    trainer = CustomSeq2SeqTrainer(
         model=model,
         args=training_args,
         eval_dataset=eval_dataset,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
         data_collator=data_collator,
-        compute_metrics=compute_metrics,
+        compute_metrics=compute_metrics
     )
 
     # Run evaluation.

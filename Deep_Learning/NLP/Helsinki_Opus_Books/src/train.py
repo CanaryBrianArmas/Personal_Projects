@@ -1,12 +1,11 @@
 # src/train.py
 
 import os
-from transformers import Trainer, TrainingArguments, DataCollatorForSeq2Seq
+from transformers import TrainingArguments, DataCollatorForSeq2Seq
 import evaluate as evalu
-from .model import load_model_and_tokenizer
-from .data_loader import load_and_prepare_dataset
-import sys
-print(sys.path)  # Muestra las rutas donde Python busca módulos
+from src.model import load_model_and_tokenizer
+from src.data_loader import load_and_prepare_dataset
+from src.custom_trainer import CustomSeq2SeqTrainer
 from src import config
 
 # Global: load model and tokenizer for use in the compute_metrics function.
@@ -54,28 +53,27 @@ def main():
         num_train_epochs=config.TRAINING_ARGS["num_train_epochs"],
         per_device_train_batch_size=config.TRAINING_ARGS["per_device_train_batch_size"],
         per_device_eval_batch_size=config.TRAINING_ARGS["per_device_eval_batch_size"],
-        evaluation_strategy=config.TRAINING_ARGS["evaluation_strategy"],
+        eval_strategy=config.TRAINING_ARGS["evaluation_strategy"],
         save_strategy=config.TRAINING_ARGS["save_strategy"],
-        logging_dir=config.TRAINING_ARGS["logging_dir"],
-        predict_with_generate=True
+        logging_dir=config.TRAINING_ARGS["logging_dir"]
     )
 
     # Initialize the Trainer.
-    trainer = Trainer(
+    trainer = CustomSeq2SeqTrainer(
         model=model,
         args=training_args,
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
         data_collator=data_collator,
-        compute_metrics=compute_metrics,
+        compute_metrics=compute_metrics
     )
 
     # Start training.
     trainer.train()
 
     # Save the final model.
-    trainer.save_model("final_model")
+    trainer.save_model("./final_model")
     print("Training complete. Model saved to 'final_model/'.")
 
 if __name__ == "__main__":
