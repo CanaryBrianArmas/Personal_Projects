@@ -1,7 +1,7 @@
 # src/model.py
 
 from transformers import MarianMTModel, MarianTokenizer
-import config
+from src import config
 
 def load_model_and_tokenizer():
     """

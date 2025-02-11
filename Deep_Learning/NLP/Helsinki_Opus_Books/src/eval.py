@@ -3,7 +3,7 @@
 from transformers import Trainer, TrainingArguments, DataCollatorForSeq2Seq
 from model import load_model_and_tokenizer
 from data_loader import load_and_prepare_dataset
-import config
+from src import config
 
 def main():
     # Load model and tokenizer.

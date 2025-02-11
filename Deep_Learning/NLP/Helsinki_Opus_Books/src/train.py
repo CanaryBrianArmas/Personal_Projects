@@ -5,6 +5,8 @@ from transformers import Trainer, TrainingArguments, DataCollatorForSeq2Seq
 import evaluate as evalu
 from .model import load_model_and_tokenizer
 from .data_loader import load_and_prepare_dataset
+import sys
+print(sys.path)  # Muestra las rutas donde Python busca módulos
 from src import config
 
 # Global: load model and tokenizer for use in the compute_metrics function.

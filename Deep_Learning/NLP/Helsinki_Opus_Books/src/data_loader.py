@@ -1,7 +1,7 @@
 # src/data_loader.py
 
 from datasets import load_dataset
-import config
+from src import config
 
 def load_and_prepare_dataset(tokenizer, max_source_length=128, max_target_length=128):
     """
