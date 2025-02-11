@@ -3,15 +3,26 @@ This a project I have made using the "en-es" subset from the Dataset: [Helsinki_
 
 ## Setup
 
-1. Clone or download the repository.
-2. Install the dependencies:
+1. Create a virtual enviroment:
+    ```
+    conda create -n NAME python=VERSION
+    ```  
+2. Clone or download the repository.
+3. Install the dependencies:
     ```
     pip install -r requirements.txt
     ```
 
-## Running the Training
+## Running the Project
 
-To train the model, simply run: python src/train.py
+### Train the model
+`python main.py train`
+
+### Evaluate the model
+`python main.py eval`
+
+### Test the model
+`python main.py test`
 
 The trained model and results will be saved in the output directory specified in `src/config.py`.
 
@@ -19,3 +30,4 @@ The trained model and results will be saved in the output directory specified in
 
 - Change the model or language pair by modifying `src/config.py`.
 - Adjust hyperparameters like batch size and number of epochs in `src/config.py`.
+- Modify data preprocessing in `src/data_loader.py` as needed.
