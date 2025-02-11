@@ -55,7 +55,8 @@ def main():
         per_device_eval_batch_size=config.TRAINING_ARGS["per_device_eval_batch_size"],
         eval_strategy=config.TRAINING_ARGS["evaluation_strategy"],
         save_strategy=config.TRAINING_ARGS["save_strategy"],
-        logging_dir=config.TRAINING_ARGS["logging_dir"]
+        logging_dir=config.TRAINING_ARGS["logging_dir"],
+        fp16=True
     )
 
     # Initialize the Trainer.

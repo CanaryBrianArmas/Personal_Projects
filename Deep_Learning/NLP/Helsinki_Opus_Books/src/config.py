@@ -3,8 +3,8 @@
 MODEL_NAME = "Helsinki-NLP/opus-mt-en-es"
 DATASET_NAME = "Helsinki-NLP/opus_books"
 DATASET_CONFIG = "en-es"
-NUM_TRAIN_EPOCHS= 3
-PER_DEVICE_TRAIN_BATCH_SIZE= 16
+NUM_TRAIN_EPOCHS = 3
+PER_DEVICE_TRAIN_BATCH_SIZE = 22
 
 # Language pair settings
 SOURCE_LANG = "en"
