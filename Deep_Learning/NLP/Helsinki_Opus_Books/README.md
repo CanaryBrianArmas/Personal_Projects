@@ -3,7 +3,7 @@ This a project I have made using the "en-es" subset from the Dataset: [Helsinki_
 
 ## Setup
 
-1. Create a virtual enviroment:
+1. Create a virtual enviroment(If you are going to run this locally):
     ```
     conda create -n NAME python=VERSION
     ```  
