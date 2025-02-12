@@ -1,6 +1,6 @@
 # src/test.py
 
-from model import load_model_and_tokenizer
+from src.model import load_model_and_tokenizer
 
 def test_model_inference():
     model, tokenizer = load_model_and_tokenizer()
