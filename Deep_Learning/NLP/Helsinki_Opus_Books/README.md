@@ -3,11 +3,14 @@ This a project I have made using the "en-es" subset from the Dataset: [Helsinki_
 
 ## Setup
 
+If you are gonna run this locally, do as follows:
+
 1. Create a virtual enviroment(If you are going to run this locally):
     ```
     conda create -n NAME python=VERSION
     ```  
-2. Clone or download the repository.
+2. Clone, download the repository.
+
 3. Install the dependencies:
     ```
     pip install -r requirements.txt
@@ -24,7 +27,12 @@ This a project I have made using the "en-es" subset from the Dataset: [Helsinki_
 ### Test the model
 `python main.py test`
 
+### Use the model
+`python main.py predict`
+
 The trained model and results will be saved in the output directory specified in `src/config.py`.
+
+Instead, you can use the Main_Colab.ipynb file and just run the cells.
 
 ## Customization
 
