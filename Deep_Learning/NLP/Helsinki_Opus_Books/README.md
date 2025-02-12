@@ -1,14 +1,14 @@
 This a project I have made using the "en-es" subset from the Dataset: [Helsinki_opus_books](https://huggingface.co/datasets/Helsinki-NLP/opus_books)
 
+You can just upload the Main_Colab.ipynb file in GoogleDrive and run it there, or, you can do this locally as follows:
 
 ## Setup
 
-If you are gonna run this locally, do as follows:
-
-1. Create a virtual enviroment(If you are going to run this locally):
+1. Create a virtual enviroment:
     ```
-    conda create -n NAME python=VERSION
+    conda create -n NAME python=VERSION --> I have used 3.9 version
     ```  
+
 2. Clone, download the repository.
 
 3. Install the dependencies:
@@ -31,8 +31,6 @@ If you are gonna run this locally, do as follows:
 `python main.py predict`
 
 The trained model and results will be saved in the output directory specified in `src/config.py`.
-
-Instead, you can use the Main_Colab.ipynb file and just run the cells.
 
 ## Customization
 
