@@ -73,9 +73,10 @@ def main():
     # Start training.
     trainer.train()
 
-    # Save the final model.
+    # Save the final model and the tokenizer. 
     trainer.save_model("./final_model")
-    print("Training complete. Model saved to 'final_model/'.")
+    tokenizer.save_pretrained("./final_model") 
+    print("Training complete. Model and Tokenizer saved to './final_model/'.")
 
 if __name__ == "__main__":
     main()
