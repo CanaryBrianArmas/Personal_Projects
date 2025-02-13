@@ -2,9 +2,13 @@
 
 import sys
 from dotenv import load_dotenv
+import warnings
 
 # Load environment variables from .env file.
 load_dotenv()
+
+# Ignore warnings
+warnings.filterwarnings("ignore")
 
 def print_usage():
     print("Usage: python main.py [train|eval|test]")
