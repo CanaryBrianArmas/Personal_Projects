@@ -7,6 +7,7 @@ You can just upload the Main_Colab.ipynb file in GoogleDrive and run it there, o
 1. Create a virtual enviroment:
     ```
     conda create -n NAME python=VERSION --> I have used 3.9 version
+    python -m venv <venv> --> The last part is a standard indistry name
     ```  
 
 2. Clone, download the repository.
