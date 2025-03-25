@@ -15,8 +15,11 @@ Must-have libraries:
 * Seaborn
 
 
-### Translation Project
+### [Translation Project](https://github.com/CanaryBrianArmas/Personal_Projects/tree/main/Deep_Learning/NLP/Helsinki_Opus_Books)
 
 This project uses this dataset from HuggingFace: [Dataset](https://huggingface.co/datasets/Helsinki-NLP/opus_books)
 
 Thanks to [Person](https://github.com/abhishekkrthakur) for adding this dataset on the platform.
+
+
+### [Breast Cancer]()
