@@ -29,4 +29,8 @@ source breast_cancer_env/bin/activate
 pip install -r requirements.txt
 ```
 
+## Run the project
+```bash
+jupyter notebook BreastCancer_ML.ipynb
+```
 
