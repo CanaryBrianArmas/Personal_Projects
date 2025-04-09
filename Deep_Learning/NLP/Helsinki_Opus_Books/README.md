@@ -1,5 +1,7 @@
 This a project I have made using the "en-es" subset from the Dataset: [Helsinki_opus_books](https://huggingface.co/datasets/Helsinki-NLP/opus_books)
 
+The goal of this project is to create a DL model which can be able to translate from english to Spanish.
+
 You can just upload the Main_Colab.ipynb file in GoogleDrive and run it there, or, you can do this locally as follows:
 
 ## Setup
