@@ -1,0 +1,59 @@
+/* Custom styles for the RAG System application */
+
+/* Make the app title more prominent */
+.main-header {
+    color: #1E88E5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+
+/* Style for document cards */
+.document-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    transition: transform 0.2s ease;
+}
+
+.document-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for answer highlight */
+.answer-container {
+    background-color: #f3f9ff;
+    border-left: 4px solid #1E88E5;
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+}
+
+/* Better visualization for sources */
+.source-highlight {
+    background-color: #fffde7;
+    border-left: 3px solid #ffd54f;
+    padding: 10px;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.95em;
+}
+
+/* Improve button styling */
+.custom-button {
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-weight: 500;
+}
+
+/* Animation for loading */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.loading-animation {
+    animation: pulse 1.5s infinite;
+}
