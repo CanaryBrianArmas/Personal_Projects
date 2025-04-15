@@ -1,5 +1,11 @@
 """Main Streamlit application for the RAG system."""
 import os
+import sys
+
+# move to the parent directory
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(parent_dir)
+
 import streamlit as st
 from rag.pipeline import RAGPipeline
 from app.components.sidebar import render_sidebar
