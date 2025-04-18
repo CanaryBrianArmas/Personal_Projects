@@ -10,7 +10,6 @@ import streamlit as st
 from rag.pipeline import RAGPipeline
 from app.components.sidebar import render_sidebar
 from app.components.results import render_results
-from app.config import config
 from app.utils.helpers import load_css, apply_custom_theme
 
 # Page configuration
@@ -63,18 +62,19 @@ render_sidebar()
 
 # Main query area
 st.subheader("Ask a Question")
-query = st.text_input("Enter your question:", key="query_input")
-col1, col2 = st.columns([1, 9])
-with col1:
-    submit_button = st.button("Submit", type="primary", key="submit_button")
+with st.form(key="query_form", clear_on_submit=True):
+    query = st.text_input("Enter your question:", key="query_input")
+    submit_button = st.form_submit_button("Submit")
 
 
 # Process query when submitted
 if submit_button and query:
     with st.spinner("Processing your question..."):
         # Check if documents are available
+        
         if not st.session_state.rag_pipeline.has_documents():
             st.error("Please upload documents first!")
+
         else:
             # Process query through RAG pipeline
             results = st.session_state.rag_pipeline.query(query)
@@ -90,7 +90,7 @@ if submit_button and query:
             })
             
             # Clear query input
-            st.session_state.query_input = ""
+            #st.session_state.query_input = ""
 
 
 # Display results
@@ -101,11 +101,14 @@ if st.session_state.current_results:
 # Display query history
 if st.session_state.query_history:
     st.subheader("Query History")
+
     for i, item in enumerate(reversed(st.session_state.query_history[-5:])):
+
         with st.expander(f"Q: {item['query']}", expanded=i==0):
             st.markdown('<div class="answer-container">', unsafe_allow_html=True)
             st.markdown(f"**Response:** {item['response']}")
             st.markdown('</div>', unsafe_allow_html=True)
+
             if item.get("timestamp"):
                 st.caption(f"Asked at: {item['timestamp']}")
 
