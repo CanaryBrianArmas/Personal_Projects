@@ -4,17 +4,6 @@ On this repository I am gonna upload the projects I have worked on.
 
 ## Projects:
 
-### [EDA_Entrega](https://github.com/CanaryBrianArmas/Personal_Projects/tree/main/EDA_Entrega)
-
-In this project I made an EDA (Exploratory Data Analysis) to get valuable and interesting insights from the [Harry Potter CSV](https://www.kaggle.com/datasets/gulsahdemiryurek/harry-potter-dataset)
-
-Must-have libraries:
-* numpy
-* Pandas
-* Matplotlib.pyplot
-* Seaborn
-
-
 ### [Translation Project](https://github.com/CanaryBrianArmas/Personal_Projects/tree/main/Deep_Learning/NLP/Helsinki_Opus_Books)
 
 This project uses this dataset from HuggingFace: [Dataset](https://huggingface.co/datasets/Helsinki-NLP/opus_books)
@@ -23,3 +12,5 @@ Thanks to [Person](https://github.com/abhishekkrthakur) for adding this dataset 
 
 
 ### [Breast Cancer](https://github.com/CanaryBrianArmas/Personal_Projects/tree/main/Machine_Learning/BreastCancer_ML)
+
+Detecting the cancer is something really important and we have to improve and discover new ways to detect it faster and in early stages. On this project I used ML to try to predict if someone is going to have breast cancer based on some features.
