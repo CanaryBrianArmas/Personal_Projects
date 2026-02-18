@@ -19,7 +19,7 @@ A professional Retrieval-Augmented Generation (RAG) system with a user-friendly 
 2. Create a virtual environment and install dependencies:
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate # Depending on your system you'll have to use bin (Linux) or Scripts (Windows)
    pip install -r requirements.txt
    ```
 
