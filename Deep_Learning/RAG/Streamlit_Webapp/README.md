@@ -13,8 +13,7 @@ A professional Retrieval-Augmented Generation (RAG) system with a user-friendly 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/CanaryBrianArmas/Personal_Projects/tree/main/Deep_Learning
-   cd rag-system
+   git clone https://github.com/CanaryBrianArmas/Personal_Projects/tree/main/Deep_Learning/RAG/Streamlit_Webapp
    ```
 
 2. Create a virtual environment and install dependencies:
