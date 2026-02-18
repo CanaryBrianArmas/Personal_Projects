@@ -12,7 +12,7 @@ class RAGConfig(BaseModel):
     huggingface_token: str = Field(default=os.getenv("HUGGINGFACE_API_TOKEN", ""))
     
     # Model settings
-    embedding_model: str = Field(default=os.getenv("MODEL_NAME", "sentence-transformers/all-MiniLM-L6-v2"))
+    embedding_model: str = Field(default=os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2"))
     llm_model: str = Field(default=os.getenv("LLM_MODEL", "google/flan-t5-base"))
     
     # Vector database settings
