@@ -43,6 +43,7 @@ A professional Retrieval-Augmented Generation (RAG) system with a user-friendly 
 
 ```
 rag-system/
+├── Knowledge_Base/   # Documents I upload to the model 
 ├── app/              # Streamlit UI and application code
 ├── rag/              # Core RAG functionality
 └── tests/            # Unit and integration tests
