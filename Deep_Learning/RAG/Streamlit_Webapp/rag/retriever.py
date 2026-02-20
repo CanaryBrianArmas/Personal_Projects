@@ -4,7 +4,7 @@ from typing import List, Dict, Any, Tuple
 import numpy as np
 import faiss
 import pickle
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from rag.embeddings import DocumentEmbedder
 from app.config import config
 
